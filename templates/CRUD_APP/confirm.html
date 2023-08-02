@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Confirmation</title>
+    {% endblock %}
+{% block content1 %}
+    <h1>Delete Confirmation</h1>
+    <h2>Do you really wants to delete this record??</h2>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="YES" class="btn btn-warning">
+        <button class="btn btn-success"><a href="{% url 'show_url' %}">NO</a></button>
+    </form>
+
+{% endblock %}
